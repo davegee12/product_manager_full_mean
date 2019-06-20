@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <h2>Edit Product</h2>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col">
+      <div *ngFor="let err of errors">
+        <p style="color: red;"> ***{{ err }}***</p>
+      </div>
+      <form (submit)="OnSubmit()">
+        <div class="form-group">
+          <label for="exampleInputEmail1">Title:</label>
+          <input type="text" class="form-control" name="edit.title" [(ngModel)]="edit.title" value="edit.title">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Price:</label>
+          <input type="text" class="form-control" name="edit.price" [(ngModel)]="edit.price" value="edit.price">
+        </div>
+        <div class="form-group">
+          <label for="exampleInputEmail1">Image url:</label>
+          <input type="text" class="form-control" name="edit.url" [(ngModel)]="edit.url" value="edit.url">
+        </div>
+        <div class="buttons">
+          <button [routerLink]="['/products']" class="btn btn-primary">Cancel</button> <span>-</span>
+          <button type="submit" class="btn btn-primary">Edit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<router-outlet></router-outlet>

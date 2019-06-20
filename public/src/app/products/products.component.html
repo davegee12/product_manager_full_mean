@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Products List</h2>
+      </div>
+    </div>
+    <router-outlet></router-outlet>
+    <div class="row">
+      <div class="col">
+        <div *ngFor=" let product of products">
+          <p><img class="image" src="{{product.url}}" alt="picture of product"></p>
+          <p>{{product.title}}</p>
+          <p>${{product.price}}.00</p>
+          <p><button type="button" class="btn btn-danger" (click)="deleteProduct(product._id)">Delete</button></p>
+          <p><button type="button" class="btn btn-success" [routerLink]="['/edit', product._id]">Edit</button></p>
+        </div>
+      </div>
+    </div>
+  </div>

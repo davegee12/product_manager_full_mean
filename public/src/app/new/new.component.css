@@ -1,0 +1,10 @@
+* {
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.container-fluid {
+    text-align: center;
+    width: 100%;
+    padding: 10px 0px 0px 0px;
+}
